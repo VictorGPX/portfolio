@@ -227,3 +227,23 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+const observerOptions = {
+  threshold: 0.15 // Triggers when 15% of the section is visible
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+    } else {
+      // Remove this line if you only want the animation to happen ONCE
+      entry.target.classList.remove('active');
+    }
+  });
+}, observerOptions);
+
+// Target your specific section class
+document.querySelectorAll('.Portcontainer').forEach((section) => {
+  observer.observe(section);
+});

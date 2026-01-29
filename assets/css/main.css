@@ -759,53 +759,59 @@ section,
 /*--------------------------------------------------------------
 # Portfolio Section
 --------------------------------------------------------------*/
-.Portcontainer {
-  font-family: var(--heading-font);
-  /* overflow: hidden; */
-  /* width: 100%; */
-  position: relative;
-  display: flex;
+#testport{
+  width:auto; 
+  height:auto; 
+  display: flexbox; 
+  justify-content:space-evenly; 
+  flex-wrap: wrap; 
   flex-direction: row;
+}
+.testportbox :hover{
+  
+  cursor: default;
+}
+
+.testportbox{
+  width: 45%; 
+  border: 2px solid white; 
+  border-radius: 10px; 
+  height: 200px; 
+  margin: 5px; 
+  box-shadow: 0px 5px 60px 0px rgba(0, 0, 0, 0.1); 
+  display: flex; 
+  justify-content: center; 
+  display: flex;  
   flex-wrap: wrap;
-  border: 1px solid red;
-  transition: 0.3s;
-  transform: translateY(30px);
 }
-.PortBox {
-  font-family: var(--heading-font);
-  flex: 1 1 auto;
-  transition: 0.3s;
-  overflow: hidden;
+
+#Seefullport{
   cursor: pointer;
-  width: 40%;
-  margin: 10px 10px;
-  border: 1px dashed black;
-  border-radius: 10px;
-  text-align: center;
-  place-content: center;
-  height: 200px;
-  box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.1);
+  background-color: var(--accent-color); 
+  border-radius: 10px; 
+  border: none; 
+  color: var(--contrast-color); 
+  width: fit-content; 
+  height: fit-content;
 }
 
-.Portcontainer .PortBox {
-  font-size: 24px;
-  font-weight: 600;
-  color: var(--default-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transform: translateY(20px);
-  transition: 0.3s;
+#Seefullport p{
+  cursor: pointer;
+  font-family: Poppins;
+}
+#linkbtn :hover{
+ background-color: #015601;
+ transition: ease-in-out 300ms;
 }
 
-.Portcontainer .active .PortBox {
-  transform: translateY(0px);
-  transition-delay: 0.3s;
+#Seefullport p :hover{
+  background-color: #015601;
 }
 
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
+
 .services .service-item {
   background-color: var(--surface-color);
   box-shadow: 0px 5px 90px 0px rgba(0, 0, 0, 0.1);
@@ -814,6 +820,9 @@ section,
   text-align: center;
   transition: 0.3s;
   border-radius: 5px;
+  width: 100%;
+  margin: 0px;
+
 }
 
 .services .service-item .icon {
@@ -857,7 +866,7 @@ section,
 }
 
 .services .service-item:hover {
-  box-shadow: 0px 5px 35px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
 .services .service-item.item-cyan i {

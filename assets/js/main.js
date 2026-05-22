@@ -185,6 +185,74 @@
   }
 
   window.addEventListener("load", initSwiper);
+  window.addEventListener("load", initProductsMarquee);
+
+  function initProductsMarquee() {
+    const marquee = document.querySelector('.products-marquee');
+    const track = marquee?.querySelector('.products-track');
+    if (!marquee || !track) return;
+
+    const cards = track.querySelectorAll('.product-card');
+    if (cards.length === 0) return;
+
+    const style = getComputedStyle(track);
+    const gap = parseInt(style.gap) || 24;
+    const cardWidth = cards[0].offsetWidth + gap;
+    const halfScroll = () => track.scrollWidth / 2;
+
+    let isDragging = false;
+    let startX = 0;
+    let startScroll = 0;
+    let lastTime = null;
+
+    function normalizeScroll() {
+      if (marquee.scrollLeft >= halfScroll()) {
+        marquee.scrollLeft -= halfScroll();
+      }
+      if (marquee.scrollLeft < 0) {
+        marquee.scrollLeft += halfScroll();
+      }
+    }
+
+    function step(timestamp) {
+      if (lastTime === null) lastTime = timestamp;
+      const delta = timestamp - lastTime;
+      lastTime = timestamp;
+      if (!isDragging) {
+        marquee.scrollLeft += 0.18 * delta;
+        normalizeScroll();
+      }
+      window.requestAnimationFrame(step);
+    }
+
+    marquee.addEventListener('pointerdown', function (event) {
+      isDragging = true;
+      marquee.classList.add('dragging');
+      startX = event.clientX;
+      startScroll = marquee.scrollLeft;
+      marquee.setPointerCapture(event.pointerId);
+    });
+
+    marquee.addEventListener('pointermove', function (event) {
+      if (!isDragging) return;
+      const distance = event.clientX - startX;
+      marquee.scrollLeft = startScroll - distance;
+      normalizeScroll();
+    });
+
+    ['pointerup', 'pointercancel', 'pointerleave'].forEach(eventName => {
+      marquee.addEventListener(eventName, function () {
+        isDragging = false;
+        marquee.classList.remove('dragging');
+      });
+    });
+
+    marquee.addEventListener('dragstart', function (event) {
+      event.preventDefault();
+    });
+
+    window.requestAnimationFrame(step);
+  }
 
   /**
    * Correct scrolling position upon page load for URLs containing hash links.

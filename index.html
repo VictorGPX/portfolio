@@ -9,8 +9,8 @@
   <meta content="" name="keywords">
 
   <!-- Favicons -->
-  <link href="assets/img/gpxfavicon3.10.png" rel="icon">
-  <link href="assets/img/gpx-touch-icon.jpg" rel="gpx-touch-icon">
+  <link href="assets/img/gpxfavicon3.10.webp" rel="icon">
+  <link href="assets/img/gpxfavicon3.10.webp" rel="apple-touch-icon">
 
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -59,7 +59,10 @@
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
 
-      <img src="assets/img/hero-bg5.jpg" alt="">
+      <picture>
+        <source type="image/webp" srcset="assets/img/hero-bg5.webp">
+        <img src="assets/img/hero-bg5.jpg" loading="eager" alt="">
+      </picture>
 
       <div class="container" data-aos="zoom-out">
         <div class="row justify-content-center">
@@ -99,7 +102,10 @@
 
         <div class="row gy-4 justify-content-center">
           <div class="col-lg-4">
-            <img src="assets/img/profile-img3.png" class="img-fluid" alt="">
+            <picture>
+              <source type="image/webp" srcset="assets/img/profile-img3.webp">
+              <img src="assets/img/profile-img3.png" loading="lazy" class="img-fluid" alt="">
+            </picture>
           </div>
           <div class="col-lg-8 content">
             <h2>Graphic Designer | Web Developer | Brand Identity Designer</h2>
@@ -588,7 +594,10 @@
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-1.1.jpg" loading="lazy" class="img-fluid testimonial-img" alt="">
+                    <picture>
+                      <source type="image/webp" srcset="assets/img/testimonials/testimonials-1.1.webp">
+                      <img src="assets/img/testimonials/testimonials-1.1.jpg" loading="lazy" class="img-fluid testimonial-img" alt="">
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -613,7 +622,10 @@
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-2.2.jpg" class="img-fluid testimonial-img" alt="">
+                    <picture>
+                      <source type="image/webp" srcset="assets/img/testimonials/testimonials-2.2.webp">
+                      <img src="assets/img/testimonials/testimonials-2.2.jpg" loading="lazy" class="img-fluid testimonial-img" alt="">
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -638,7 +650,10 @@
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-3.png" class="img-fluid testimonial-img" alt="">
+                    <picture>
+                      <source type="image/webp" srcset="assets/img/testimonials/testimonials-3.webp">
+                      <img src="assets/img/testimonials/testimonials-3.png" loading="lazy" class="img-fluid testimonial-img" alt="">
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -662,7 +677,10 @@
                     </div>
                   </div>
                   <div class="col-lg-2 text-center">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img" alt="">
+                    <picture>
+                      <source type="image/webp" srcset="assets/img/testimonials/testimonials-4.webp">
+                      <img src="assets/img/testimonials/testimonials-4.jpg" loading="lazy" class="img-fluid testimonial-img" alt="">
+                    </picture>
                   </div>
                 </div>
               </div>
@@ -711,7 +729,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>send me an Email</h3>
-                <!-- <p>officiallyvictor28@gmail.com</p> -->
+                <!-- <p>officiallyedikan28@gmail.com</p> -->
               </div>
             </div><!-- End Info Item -->
 
@@ -789,35 +807,40 @@
   <!-- <div id="preloader"></div> -->
 
   <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
   <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js" defer></script>
+  <script src="assets/vendor/typed.js/typed.umd.js" defer></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js" defer></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js" defer></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js" defer></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
 
   <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
+  <script src="assets/js/main.js" defer></script>
   
-  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script src="https://cdn.emailjs.com/dist/email.min.js" async></script>
   <script>
-    (function() {
-      emailjs.init("sVqRE34NevtmCjzRH"); // Replace with your EmailJS Public Key
-    })();
+    window.addEventListener('load', function() {
+      (function() {
+        emailjs.init("sVqRE34NevtmCjzRH"); // Replace with your EmailJS Public Key
+      })();
 
-    document.getElementById("contactForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+      var form = document.getElementById("contactForm");
+      if (form) {
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
 
-      emailjs.sendForm("service_u364cbq", "template_6wecbho", this)
-        .then(() => {
-          alert("Message sent successfully!");
-        }, (error) => {
-          alert("Failed to send message. " + JSON.stringify(error));
+          emailjs.sendForm("service_u364cbq", "template_6wecbho", this)
+            .then(function() {
+              alert("Message sent successfully!");
+            }, function(error) {
+              alert("Failed to send message. " + JSON.stringify(error));
+            });
         });
+      }
     });
   </script>
 
